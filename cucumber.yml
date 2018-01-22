@@ -1,0 +1,4 @@
+---
+default: --profile json
+html: --format pretty --format html --out=reports/report<%= ENV['TEST_ENV_NUMBER'] %>.html
+json: --format pretty --format json --out=reports/report<%= ENV['TEST_ENV_NUMBER'] %>.json
