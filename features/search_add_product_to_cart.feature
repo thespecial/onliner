@@ -1,4 +1,4 @@
-Feature: Add Product to Cart
+Feature: Search and add product to cart feature
   As a user
   I should be able to:
     - search product

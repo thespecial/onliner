@@ -26,12 +26,6 @@ When(/^cart (?:is empty|(?:has|shows) (\d+|no|one))(?: items?| products?)?(?: in
   end
 end
 
-# When user adds item to cart
-# When I add product to the cart
-When(/^(?:I|(?:U|u)ser) adds? (?:item|product) to(?: the)? cart$/) do
-  on(ProductPage).add_top_suggestion_to_cart
-end
-
 # When I open cart page
 # When user opens cart page
 # When I navigate to cart

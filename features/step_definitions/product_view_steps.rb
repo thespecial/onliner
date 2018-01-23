@@ -22,6 +22,12 @@ Then(/^product "([^"]*)" (?:view)?(?: )?page should be opened$/) do |product_nam
   expect(current_url).to match(Constants::PRODUCT_PAGE[:url])
 end
 
+# When user adds item to cart
+# When I add product to the cart
+When(/^(?:I|(?:U|u)ser) adds? (?:item|product) to(?: the)? cart$/) do
+  on(ProductPage).add_top_suggestion_to_cart
+end
+
 # Then product specifications are shown:
 # Then product specs are shown:
 Then(/^product (?:specifications|specs) are shown:$/) do |table|
