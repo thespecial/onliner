@@ -11,6 +11,9 @@ module Constants
     summary: /^Итого: (?<products_count>\d+) товар(?:ов|а)? на сумму (?<price>\d+,\d+) р.$/
   }.freeze
 
+  # To check results are loaded
+  SEARCHING_CLASS ||= 'search__bar_searching'
+
   PRODUCT_PAGE ||= {
     url: /^(?:https?:\/\/)catalog.onliner.by\/.+/,
     specs: {

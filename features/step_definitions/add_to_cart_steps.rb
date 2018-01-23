@@ -18,18 +18,18 @@ When(/^cart (?:is empty|(?:has|shows) (\d+|no|one))(?: items?| products?)?(?: in
     expect(quantity).to eq expected_count
     expect(quantity).to eq on(CartPage).total_products_count
   else
-    expect(on(Header).cart_items_count).to eq expected_count
+    on(Header) do |header|
+      expect(
+        header.wait_until { header.cart_items_count == expected_count }
+      ).to be_truthy
+    end
   end
 end
 
 # When user adds item to cart
 # When I add product to the cart
 When(/^(?:I|(?:U|u)ser) adds? (?:item|product) to(?: the)? cart$/) do
-  on(ProductPage) do |page|
-    cart_products_before_count = on(Header).cart_items_count
-    page.add_top_suggestion_to_cart
-    wait.until { on(Header).cart_items_count == cart_products_before_count + 1 }
-  end
+  on(ProductPage).add_top_suggestion_to_cart
 end
 
 # When I open cart page

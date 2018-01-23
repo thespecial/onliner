@@ -38,9 +38,13 @@ class SearchModal
 
   # Waits until searchbar loading starts and stops
   # Signalize that search results finished loading
+  # Wrapped with rescue as initial loading may not appear
   def wait_for_results_to_load
-    wait_until { searchbar_element.attribute('class').include?('search__bar_searching') }
-    wait_until { !searchbar_element.attribute('class').include?('search__bar_searching') }
+    wait_until { searchbar_element.attribute('class').include?(Constants::SEARCHING_CLASS) }
+  rescue StandardError
+    puts 'Loading in search modal didn\'t appear!'
+  ensure
+    wait_until { !searchbar_element.attribute('class').include?(Constants::SEARCHING_CLASS) }
   end
 
   private
