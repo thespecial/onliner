@@ -87,6 +87,10 @@ Running reports server on http://localhost:8025
 By default reports server run on port 8025. It can be changed in `.env` file.
 Having reports server running you can open report in browser at [http://localhost:8025](http://localhost:8025).
 
+Report screenshots:
+
+
+
 ### Framework description
 
 **Gems used**
