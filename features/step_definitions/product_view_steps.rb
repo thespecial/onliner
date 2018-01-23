@@ -2,7 +2,7 @@
 
 # When user clicks on the first|last|<int>st|<int>nd product
 # When I click on first|last|<int>st|<int>nd result
-When(/^(?:I|(?:U|u)ser) clicks? on (?:the)?(?: )?(\d+|first|last)(?:st|nd)? (?:product|result)$/) do |index|
+When(/^(?:I|(?:U|u)ser) clicks? on (?:the)?(?: )?(\d+|first|last)(?:st|nd)?(?: search)?(?: )?(?:product|result)$/) do |index|
   index = case index
           when 'first' then 0
           when 'last' then -1

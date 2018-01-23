@@ -1,4 +1,4 @@
-Feature: Search and add product to cart feature
+Feature: Search and add product to cart
   As a user
   I should be able to:
     - search product
@@ -11,7 +11,7 @@ Feature: Search and add product to cart feature
     When user enters "Canon EOS 1300D" into the search field
     Then search results for "Canon EOS 1300D" are shown
 
-    When user clicks on the first result
+    When user clicks on the first search result
     Then product "Canon EOS 1300D" page should be opened
     And product specifications are shown:
       | screen | sensor             | megapixels |
@@ -33,7 +33,7 @@ Feature: Search and add product to cart feature
     When I type "Canon EOS 1300D" into the search
     Then search results are shown
 
-    When I click on the first result
+    When I click on the first search result
     Then product "Canon EOS 1300D" page should be opened
 
     When cart is empty
@@ -43,7 +43,7 @@ Feature: Search and add product to cart feature
     When I type "Canon EOS 750D Kit 18-55mm" into the search
     Then search results are shown
 
-    When I click on the first result
+    When I click on the first search result
     Then product "Canon EOS 750D Kit 18-55mm" page should be opened
 
     When I add product to cart

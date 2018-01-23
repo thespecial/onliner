@@ -16,7 +16,7 @@
 
 To install dependencies (staying at project root) run
 
-`bundle install`
+```bundle install```
 
 ### How To
 
@@ -24,7 +24,7 @@ To install dependencies (staying at project root) run
 
 Running
 
-`rake --tasks`
+```rake --tasks```
 
 will output
 
@@ -40,7 +40,15 @@ rake test:parallel[n]  # Parallel tests execution
 
 To run tests in parallel please execute
 
-`rake test:parallel[n]` or (if you're ZSH user) `rake test:parallel\[n\]`
+```
+rake test:parallel[n]
+```
+
+or (if you're ZSH user)
+
+```
+rake test:parallel\[n\]
+```
 
 where `n` - number of threads you want to use.
 
@@ -124,5 +132,4 @@ Developed framework has following file structure:
   - `search_add_product_to_cart.feature` - cucumber feature file to describe feature and scenarios
 
 **reports** - `report<n>.json` and `index.html` report files are placed here
-
 
