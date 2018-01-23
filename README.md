@@ -2,11 +2,21 @@
 
 ### Demo
 
-**Sample tests execution output**
+[Scenarios](https://github.com/thespecial/onliner/blob/master/features/search_and_add_product_to_cart.feature)
 
-```
+**Tests execution**
 
-```
+| Sequential | Parallel |
+|------------|----------|
+|![tests](https://user-images.githubusercontent.com/3316019/35257100-720268a4-0008-11e8-9406-c5bc96a6dd41.gif) | ![tests_parallel](https://user-images.githubusercontent.com/3316019/35257099-71e4d5b4-0008-11e8-974b-3034e914ede3.gif) |
+
+NOTE: For parallel execution reports functionality is not demonstrated, but work exactly the same as for sequential.
+
+**Reports**
+
+| Overview  | Features | Summary |
+|-----------|----------|-----------|
+|![screen shot 2018-01-23 at 06 11 54](https://user-images.githubusercontent.com/3316019/35256343-71fdf3d6-0004-11e8-8f73-34438f875d7b.png)| ![screen shot 2018-01-23 at 06 12 10](https://user-images.githubusercontent.com/3316019/35256342-71e13692-0004-11e8-955e-9a263cc694bd.png) | ![screen shot 2018-01-23 at 06 12 25](https://user-images.githubusercontent.com/3316019/35256341-71c31cc0-0004-11e8-8fcc-8ab59f8e20d6.png) |
 
 ### Requirements
 
@@ -16,19 +26,17 @@
 
 To install dependencies (staying at project root) run
 
-```bundle install```
+```
+$ bundle install
+```
 
 ### How To
 
-**See rake tasks**
-
-Running
-
-```rake --tasks```
-
-will output
+**See available tasks**
 
 ```
+$ rake --tasks
+
 rake report:build      # Generate report
 rake report:clear      # Clear reports folder
 rake report:run        # Start report server
@@ -41,13 +49,13 @@ rake test:parallel[n]  # Parallel tests execution
 To run tests in parallel please execute
 
 ```
-rake test:parallel[n]
+$ rake test:parallel[n]
 ```
 
 or (if you're ZSH user)
 
 ```
-rake test:parallel\[n\]
+$ rake test:parallel\[n\]
 ```
 
 where `n` - number of threads you want to use.
@@ -55,7 +63,9 @@ where `n` - number of threads you want to use.
 
 To run tests sequentially
 
-`rake test:normal` or `rake`
+```
+$ rake test:normal     # or just rake as it's default
+```
 
 Running any of these commands will clear `reports` directory and populate it with new test results.
 
@@ -64,20 +74,16 @@ To enable GUI mode just change `headless` param to `false`.
 
 Also it is possible to run tests in Firefox. To do so just change `browser` config param to 'firefox'.
 
-NOTE: in this system headless mode currently supported only for Chrome.
+NOTE: In this framework headless mode currently supported only for Chrome.
 
-### Reporting
+**Run reports**
 
 After tests finished execution (staying at project root) run:
 
 ```
-rake report:build      # will generate index.html file based on reports<n>.json
-rake report:run        # will run reports server
-```
+$ rake report:build      # will generate index.html file based on reports<n>.json
+$ rake report:run        # will run reports server
 
-Here is output of the last command (if everything goes well):
-
-```
 Running reports server on http://localhost:8025
 [2018-01-23 05:09:20] INFO  WEBrick 1.4.2
 [2018-01-23 05:09:20] INFO  ruby 2.5.0 (2017-12-25) [x86_64-darwin16]
@@ -86,10 +92,6 @@ Running reports server on http://localhost:8025
 
 By default reports server run on port 8025. It can be changed in `.env` file.
 Having reports server running you can open report in browser at [http://localhost:8025](http://localhost:8025).
-
-Report screenshots:
-
-
 
 ### Framework description
 
