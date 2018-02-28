@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'cucumber'
 require 'dotenv'
+require 'cucumber'
 require 'page-object'
 require 'page-object/page_factory'
 require 'parallel_tests'
