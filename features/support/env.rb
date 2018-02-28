@@ -15,6 +15,12 @@ require_relative 'selectors'
 # Load env variables
 Dotenv.load
 
+puts ENV['SECTIONS_FOLDER']
+puts '============'
+puts File.join(Dir.pwd, ENV['SECTIONS_FOLDER'], '*')
+puts '============'
+puts Dir.glob(File.join(Dir.pwd, ENV['SECTIONS_FOLDER'], '*'))
+
 # Require all necessary files
 # current_dir = File.dirname(File.absolute_path(__FILE__))
 Dir.glob(File.join(Dir.pwd, ENV['SECTIONS_FOLDER'], '*')) { |file| require_relative file }
