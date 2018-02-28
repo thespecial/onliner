@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'dotenv'
+require 'dotenv/load'
 require 'cucumber'
 require 'page-object'
 require 'page-object/page_factory'
@@ -12,18 +12,16 @@ require 'yaml'
 require_relative 'constants'
 require_relative 'selectors'
 
-# Load env variables
-Dotenv.load
-
-puts ENV['SECTIONS_FOLDER']
-puts '============'
-puts File.join(Dir.pwd, ENV['SECTIONS_FOLDER'], '*')
-puts '============'
-puts Dir.glob(File.join(Dir.pwd, ENV['SECTIONS_FOLDER'], '*'))
+# require sections
+require File.join(Dir.pwd, ENV['SECTIONS_FOLDER'], 'cart_product.rb')
+require File.join(Dir.pwd, ENV['SECTIONS_FOLDER'], 'header.rb')
+require File.join(Dir.pwd, ENV['SECTIONS_FOLDER'], 'product_suggestion.rb')
+require File.join(Dir.pwd, ENV['SECTIONS_FOLDER'], 'product_suggestions.rb')
+require File.join(Dir.pwd, ENV['SECTIONS_FOLDER'], 'search_modal.rb')
 
 # Require all necessary files
 # current_dir = File.dirname(File.absolute_path(__FILE__))
-Dir.glob(File.join(Dir.pwd, ENV['SECTIONS_FOLDER'], '*')) { |file| require_relative file }
+# Dir.glob(File.join(Dir.pwd, ENV['SECTIONS_FOLDER'], '*')) { |file| require_relative file }
 
 World(PageObject::PageFactory)
 

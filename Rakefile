@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-require 'dotenv'
+require 'dotenv/load'
 require 'report_builder'
-
-Dotenv.load
 
 task default: ['report:clear', 'test:normal']
 
